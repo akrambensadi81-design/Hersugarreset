@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Her Sugar Reset — Free 3-Day Detox Ebook</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0505;
+    --surface: #160a0a;
+    --surface2: #1f1010;
+    --accent: #ff3535;
+    --accent2: #ff8c42;
+    --accent3: #ffcc00;
+    --text: #fff5f0;
+    --muted: #9a7a78;
+    --border: #2e1515;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;overflow-x:hidden;}
+
+/* NAV */
+nav{
+position:sticky;top:0;z-index:100;
+background:rgba(13,5,5,0.88);backdrop-filter:blur(18px);
+border-bottom:1px solid var(–border);
+display:flex;align-items:center;justify-content:space-between;
+padding:14px 48px;
+}
+.logo{font-family:‘Playfair Display’,serif;font-size:19px;font-weight:700;letter-spacing:.5px;}
+.logo span{color:var(–accent);}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-social a{
+display:flex;align-items:center;justify-content:center;
+width:34px;height:34px;border-radius:50%;
+background:var(–surface2);border:1px solid var(–border);
+transition:all .2s;text-decoration:none;
+}
+.nav-social a:hover{background:var(–accent);border-color:var(–accent);transform:translateY(-2px);}
+.nav-social{display:flex;gap:10px;}
+.nav-social svg{width:15px;height:15px;fill:var(–text);}
+.nav-cta{
+background:var(–accent);color:#fff;font-size:12px;font-weight:700;
+letter-spacing:1px;text-transform:uppercase;padding:8px 18px;
+border-radius:100px;text-decoration:none;transition:all .2s;white-space:nowrap;
+}
+.nav-cta:hover{background:#e02020;transform:translateY(-1px);}
+
+/* HERO */
+.hero{
+position:relative;min-height:96vh;
+display:flex;align-items:center;justify-content:center;
+padding:80px 48px;text-align:center;overflow:hidden;
+}
+.hero-bg{
+position:absolute;inset:0;z-index:0;
+background:
+radial-gradient(ellipse 60% 50% at 50% 30%, rgba(255,53,53,.18) 0%, transparent 70%),
+radial-gradient(ellipse 40% 40% at 80% 80%, rgba(255,140,66,.10) 0%, transparent 60%);
+}
+.hero-grid{
+position:absolute;inset:0;z-index:0;
+background-image:
+linear-gradient(var(–border) 1px,transparent 1px),
+linear-gradient(90deg,var(–border) 1px,transparent 1px);
+background-size:48px 48px;
+mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%);
+}
+.hero-inner{position:relative;z-index:1;max-width:780px;}
+.hero-badge{
+display:inline-flex;align-items:center;gap:8px;
+background:rgba(255,53,53,.12);border:1px solid rgba(255,53,53,.35);
+color:var(–accent);font-size:11px;font-weight:700;letter-spacing:2px;
+text-transform:uppercase;padding:7px 18px;border-radius:100px;margin-bottom:28px;
+}
+.hero-badge::before{content:’’;width:7px;height:7px;border-radius:50%;background:var(–accent);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
+.hero h1{
+font-family:‘Playfair Display’,serif;
+font-size:clamp(42px,7vw,88px);font-weight:700;line-height:1.0;
+margin-bottom:24px;
+}
+.hero h1 em{font-style:italic;color:var(–accent);}
+.hero-sub{
+font-size:clamp(15px,2vw,18px);color:var(–muted);font-weight:300;
+line-height:1.7;max-width:540px;margin:0 auto 40px;
+}
+.hero-sub strong{color:var(–text);font-weight:600;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{
+background:var(–accent);color:#fff;font-weight:700;font-size:15px;
+padding:16px 36px;border-radius:100px;text-decoration:none;
+transition:all .25s;display:inline-flex;align-items:center;gap:10px;
+box-shadow:0 0 32px rgba(255,53,53,.35);
+}
+.btn-primary:hover{background:#e02020;transform:translateY(-3px);box-shadow:0 0 48px rgba(255,53,53,.5);}
+.btn-secondary{
+background:transparent;color:var(–text);font-weight:600;font-size:15px;
+padding:16px 36px;border-radius:100px;text-decoration:none;
+border:1px solid var(–border);transition:all .25s;
+display:inline-flex;align-items:center;gap:10px;
+}
+.btn-secondary:hover{border-color:var(–accent2);color:var(–accent2);transform:translateY(-3px);}
+.btn-icon{font-size:18px;}
+.hero-note{margin-top:20px;font-size:12px;color:var(–muted);letter-spacing:.5px;}
+
+/* SCROLL CUE */
+.scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.scroll-cue span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(–muted);}
+.scroll-line{width:1px;height:40px;background:linear-gradient(var(–accent),transparent);animation:scrollDown 1.6s ease-in-out infinite;}
+@keyframes scrollDown{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+/* WHAT’S INSIDE */
+section{padding:80px 48px;max-width:1100px;margin:0 auto;}
+.section-label{
+font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+color:var(–accent);margin-bottom:12px;
+}
+.section-title{font-family:‘Playfair Display’,serif;font-size:clamp(28px,4vw,48px);font-weight:700;line-height:1.15;margin-bottom:40px;}
+.section-title em{font-style:italic;color:var(–accent);}
+
+.chapters-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+.chapter-card{
+background:var(–surface);border:1px solid var(–border);border-radius:12px;
+padding:24px;transition:all .25s;position:relative;overflow:hidden;
+}
+.chapter-card::before{
+content:’’;position:absolute;inset:0;
+background:linear-gradient(135deg,rgba(255,53,53,.07),transparent);
+opacity:0;transition:opacity .25s;
+}
+.chapter-card:hover{border-color:rgba(255,53,53,.35);transform:translateY(-4px);}
+.chapter-card:hover::before{opacity:1;}
+.ch-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(–accent);margin-bottom:10px;}
+.ch-title{font-family:‘Playfair Display’,serif;font-size:17px;font-weight:700;line-height:1.3;margin-bottom:8px;}
+.ch-desc{font-size:13px;color:var(–muted);line-height:1.6;font-weight:300;}
+
+/* DAYS */
+.days-track{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;}
+.days-track::before{
+content:’’;position:absolute;top:36px;left:calc(16%);right:calc(16%);
+height:1px;background:linear-gradient(90deg,var(–accent),var(–accent2),var(–accent3));
+z-index:0;
+}
+.day-card{
+background:var(–surface);border:1px solid var(–border);border-radius:14px;
+padding:28px 24px;text-align:center;position:relative;z-index:1;transition:all .25s;
+}
+.day-card:hover{transform:translateY(-6px);border-color:rgba(255,53,53,.4);}
+.day-num{
+width:56px;height:56px;border-radius:50%;margin:0 auto 16px;
+display:flex;align-items:center;justify-content:center;
+font-family:‘Playfair Display’,serif;font-size:22px;font-weight:700;
+border:2px solid var(–accent);color:var(–accent);background:var(–bg);
+}
+.day-title{font-family:‘Playfair Display’,serif;font-size:20px;font-weight:700;margin-bottom:10px;}
+.day-sub{font-size:13px;color:var(–muted);line-height:1.6;font-weight:300;}
+.day-tag{
+display:inline-block;margin-top:14px;
+font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+padding:4px 14px;border-radius:100px;
+background:rgba(255,53,53,.12);color:var(–accent);border:1px solid rgba(255,53,53,.25);
+}
+
+/* RESULTS */
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.result-card{
+background:var(–surface);border:1px solid var(–border);border-radius:12px;
+padding:24px 20px;text-align:center;transition:all .25s;
+}
+.result-card:hover{border-color:rgba(255,204,0,.3);transform:translateY(-3px);}
+.result-icon{font-size:32px;margin-bottom:12px;}
+.result-title{font-weight:700;font-size:15px;margin-bottom:6px;}
+.result-sub{font-size:13px;color:var(–muted);font-weight:300;line-height:1.5;}
+
+/* PAID CTA SECTION */
+.upgrade-section{
+background:linear-gradient(135deg,var(–surface),#1a0808);
+border:1px solid rgba(255,140,66,.25);border-radius:20px;
+padding:56px 48px;text-align:center;margin:0 48px 80px;
+position:relative;overflow:hidden;
+}
+.upgrade-section::before{
+content:’’;position:absolute;inset:0;
+background:radial-gradient(ellipse 60% 60% at 50% 0%,rgba(255,140,66,.12),transparent);
+pointer-events:none;
+}
+.upgrade-badge{
+display:inline-flex;align-items:center;gap:8px;
+background:rgba(255,140,66,.12);border:1px solid rgba(255,140,66,.35);
+color:var(–accent2);font-size:11px;font-weight:700;letter-spacing:2px;
+text-transform:uppercase;padding:7px 18px;border-radius:100px;margin-bottom:22px;
+}
+.upgrade-section h2{font-family:‘Playfair Display’,serif;font-size:clamp(26px,4vw,48px);font-weight:700;line-height:1.1;margin-bottom:16px;}
+.upgrade-section h2 em{font-style:italic;color:var(–accent2);}
+.upgrade-section p{font-size:16px;color:var(–muted);font-weight:300;line-height:1.7;max-width:520px;margin:0 auto 32px;}
+.upgrade-perks{
+display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:36px;
+}
+.perk{
+background:var(–surface2);border:1px solid var(–border);border-radius:100px;
+padding:8px 18px;font-size:13px;font-weight:500;color:var(–text);
+display:flex;align-items:center;gap:6px;
+}
+.perk span{color:var(–accent2);}
+.btn-paid{
+display:inline-flex;align-items:center;gap:10px;
+background:linear-gradient(135deg,var(–accent2),#e06020);
+color:#fff;font-weight:700;font-size:16px;padding:18px 44px;
+border-radius:100px;text-decoration:none;transition:all .25s;
+box-shadow:0 0 36px rgba(255,140,66,.3);
+}
+.btn-paid:hover{transform:translateY(-3px);box-shadow:0 0 56px rgba(255,140,66,.5);}
+
+/* FREE SECTION */
+.free-section{
+background:var(–surface);border:1px solid var(–border);border-radius:20px;
+padding:56px 48px;margin:0 48px 80px;text-align:center;position:relative;overflow:hidden;
+}
+.free-section::before{
+content:’’;position:absolute;inset:0;
+background:radial-gradient(ellipse 50% 60% at 50% 0%,rgba(255,53,53,.1),transparent);
+pointer-events:none;
+}
+.free-section h2{font-family:‘Playfair Display’,serif;font-size:clamp(26px,4vw,44px);font-weight:700;line-height:1.15;margin-bottom:14px;}
+.free-section h2 em{font-style:italic;color:var(–accent);}
+.free-section p{font-size:16px;color:var(–muted);font-weight:300;line-height:1.7;max-width:500px;margin:0 auto 32px;}
+.free-note{margin-top:16px;font-size:13px;color:var(–muted);}
+
+/* FOOTER */
+footer{
+border-top:1px solid var(–border);padding:36px 48px;
+display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+}
+.footer-logo{font-family:‘Playfair Display’,serif;font-size:17px;font-weight:700;}
+.footer-logo span{color:var(–accent);}
+.footer-links{display:flex;align-items:center;gap:20px;}
+.footer-links a{
+color:var(–muted);font-size:13px;text-decoration:none;
+display:flex;align-items:center;gap:6px;transition:color .2s;
+}
+.footer-links a:hover{color:var(–text);}
+.footer-links svg{width:14px;height:14px;fill:currentColor;}
+.footer-copy{font-size:12px;color:var(–muted);width:100%;text-align:center;margin-top:8px;}
+
+/* RESPONSIVE */
+@media(max-width:720px){
+nav,section,.upgrade-section,.free-section,footer{padding-left:20px;padding-right:20px;}
+.upgrade-section,.free-section{margin-left:16px;margin-right:16px;}
+.days-track{grid-template-columns:1fr;}
+.days-track::before{display:none;}
+.hero-btns{flex-direction:column;align-items:center;}
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <div class="logo">Her<span>Sugar</span>Reset</div>
+  <div class="nav-right">
+    <div class="nav-social">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/hersugarreset?igsh=ZWh0MjcwOWQ3am90&utm_source=qr" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.333-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.74 0 8.333.014 7.053.072 5.775.131 4.602.425 3.635 1.392 2.667 2.359 2.373 3.532 2.314 4.81 2.256 6.09 2.24 6.497 2.24 12c0 5.503.016 5.91.074 7.19.059 1.278.353 2.451 1.32 3.418.967.967 2.14 1.261 3.418 1.32C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c1.278-.059 2.451-.353 3.418-1.32.967-.967 1.261-2.14 1.32-3.418.058-1.28.072-1.687.072-7.19 0-5.503-.014-5.91-.072-7.19-.059-1.278-.353-2.451-1.32-3.418C19.398.425 18.225.131 16.947.072 15.667.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@hersugarreset" target="_blank" aria-label="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+      </a>
+    </div>
+    <a href="https://selar.com/89832c9759" target="_blank" class="nav-cta">Get Full Ebook ✦</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">✦ Free Download Available</div>
+    <h1>Break Your<br><em>Sugar Cravings</em><br>in 72 Hours</h1>
+    <p class="hero-sub">No willpower required. No supplements. No complicated prep.<br><strong>Just a strategy that actually works</strong> — for women who are done starting over.</p>
+    <div class="hero-btns">
+      <a href="https://drive.google.com/file/d/1pEhvNBw_sVvoLD5Lk-cx_3JMj0hioTrl/view?usp=drivesdk" target="_blank" class="btn-primary"><span class="btn-icon">🎁</span> Get the Free Ebook</a>
+      <a href="https://selar.com/89832c9759" target="_blank" class="btn-secondary"><span class="btn-icon">✦</span> Get the Full Paid Version</a>
+    </div>
+    <p class="hero-note">Free version available instantly · No credit card needed</p>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><div class="scroll-line"></div></div>
+</div>
+
+<!-- WHAT'S INSIDE -->
+
+<section>
+  <div class="section-label">Inside the Ebook</div>
+  <div class="section-title">Everything You Need.<br><em>Nothing You Don't.</em></div>
+  <div class="chapters-grid">
+    <div class="chapter-card"><div class="ch-num">Chapter 1</div><div class="ch-title">Why Diets Keep Failing You</div><div class="ch-desc">It's not willpower. It's biology — and once you understand why, everything changes.</div></div>
+    <div class="chapter-card"><div class="ch-num">Chapter 2</div><div class="ch-title">What Sugar Does to Your Body</div><div class="ch-desc">The dopamine trap, hidden sugars in "healthy" foods, and the inflammation link no one talks about.</div></div>
+    <div class="chapter-card"><div class="ch-num">Chapter 3</div><div class="ch-title">The 3-Day Reset Framework</div><div class="ch-desc">The 3 core rules and the science behind why 72 hours is the minimum effective dose.</div></div>
+    <div class="chapter-card"><div class="ch-num">Chapters 4–6</div><div class="ch-title">Day-by-Day Game Plan</div><div class="ch-desc">Exact protocols for each day — morning routines, craving responses, and evening check-ins.</div></div>
+    <div class="chapter-card"><div class="ch-num">Chapter 7</div><div class="ch-title">Meal Plan & Grocery List</div><div class="ch-desc">A full 3-day meal plan and a grocery list designed to cost under $50 total.</div></div>
+    <div class="chapter-card"><div class="ch-num">Chapters 8–9</div><div class="ch-title">Day 4 and Beyond</div><div class="ch-desc">The 80/20 rule, 5 habits that protect your reset, and your full action plan checklist.</div></div>
+  </div>
+</section>
+
+<!-- THE 3 DAYS -->
+
+<section>
+  <div class="section-label">The Method</div>
+  <div class="section-title">Three Days.<br><em>One Decision.</em></div>
+  <div class="days-track">
+    <div class="day-card">
+      <div class="day-num">1</div>
+      <div class="day-title">Cut the Cycle</div>
+      <div class="day-sub">Remove trigger foods. Stabilize blood sugar. Survive the first wave with strategy, not suffering.</div>
+      <div class="day-tag">The Foundation</div>
+    </div>
+    <div class="day-card">
+      <div class="day-num">2</div>
+      <div class="day-title">Reset & Rebuild</div>
+      <div class="day-sub">Brain chemistry shifts. Cravings peak then fade. Nutrient-dense foods restore your energy baseline.</div>
+      <div class="day-tag">The Shift</div>
+    </div>
+    <div class="day-card">
+      <div class="day-num">3</div>
+      <div class="day-title">Lock It In</div>
+      <div class="day-sub">Cravings drop significantly. You build the habits that carry these results forward — for good.</div>
+      <div class="day-tag">The Win</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+
+<section>
+  <div class="section-label">What to Expect</div>
+  <div class="section-title">By Day 3,<br><em>You'll Feel It.</em></div>
+  <div class="results-grid">
+    <div class="result-card"><div class="result-icon">⚡</div><div class="result-title">Steady Energy</div><div class="result-sub">No more 3pm crashes or energy rollercoasters throughout the day.</div></div>
+    <div class="result-card"><div class="result-icon">🧠</div><div class="result-title">Mental Clarity</div><div class="result-sub">The brain fog lifts. Most people notice this by end of Day 2.</div></div>
+    <div class="result-card"><div class="result-icon">🚫</div><div class="result-title">Cravings Drop 70%</div><div class="result-sub">After 72 hours, the acute craving cycle breaks for most people.</div></div>
+    <div class="result-card"><div class="result-icon">✨</div><div class="result-title">Clearer Skin</div><div class="result-sub">Reduced sugar = reduced inflammation = visible difference in your skin.</div></div>
+    <div class="result-card"><div class="result-icon">😴</div><div class="result-title">Better Sleep</div><div class="result-sub">Stable blood sugar through the night means deeper, more restful sleep.</div></div>
+    <div class="result-card"><div class="result-icon">💪</div><div class="result-title">Sense of Control</div><div class="result-sub">You're no longer being run by cravings. That shift changes everything.</div></div>
+  </div>
+</section>
+
+<!-- PAID EBOOK CTA -->
+
+<div class="upgrade-section">
+  <div class="upgrade-badge">✦ Full Version Available</div>
+  <h2>Ready to Go<br><em>All In?</em></h2>
+  <p>The paid ebook includes the complete program with deeper science, expanded meal plans, and the full Day 4+ maintenance system — everything you need to make this permanent.</p>
+  <div class="upgrade-perks">
+    <div class="perk"><span>✦</span> Full 9-Chapter Program</div>
+    <div class="perk"><span>✦</span> Expanded Meal Plans</div>
+    <div class="perk"><span>✦</span> Day 4+ Maintenance System</div>
+    <div class="perk"><span>✦</span> Craving Response Toolkit</div>
+    <div class="perk"><span>✦</span> Printable Action Plan</div>
+  </div>
+  <a href="https://selar.com/89832c9759" target="_blank" class="btn-paid"><span>✦</span> Get the Full Ebook Now</a>
+</div>
+
+<!-- FREE CTA -->
+
+<div class="free-section">
+  <div class="section-label">Free Download</div>
+  <h2>Start Your Reset<br><em>Today — For Free</em></h2>
+  <p>No credit card. No catch. Just the plan that finally makes sense. Grab the free version and start as early as tonight.</p>
+  <a href="https://drive.google.com/file/d/1pEhvNBw_sVvoLD5Lk-cx_3JMj0hioTrl/view?usp=drivesdk" target="_blank" class="btn-primary"><span class="btn-icon">🎁</span> Download Free Now</a>
+  <p class="free-note">Instant access via Google Drive · No sign-up needed</p>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">Her<span>Sugar</span>Reset</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/hersugarreset?igsh=ZWh0MjcwOWQ3am90&utm_source=qr" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.333-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.74 0 8.333.014 7.053.072 5.775.131 4.602.425 3.635 1.392 2.667 2.359 2.373 3.532 2.314 4.81 2.256 6.09 2.24 6.497 2.24 12c0 5.503.016 5.91.074 7.19.059 1.278.353 2.451 1.32 3.418.967.967 2.14 1.261 3.418 1.32C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c1.278-.059 2.451-.353 3.418-1.32.967-.967 1.261-2.14 1.32-3.418.058-1.28.072-1.687.072-7.19 0-5.503-.014-5.91-.072-7.19-.059-1.278-.353-2.451-1.32-3.418C19.398.425 18.225.131 16.947.072 15.667.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      Instagram
+    </a>
+    <a href="https://www.tiktok.com/@hersugarreset" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+      TikTok
+    </a>
+    <a href="mailto:Pixelandpivot@gmail.com">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Contact
+    </a>
+  </div>
+  <p class="footer-copy">© 2026 HerSugarReset · All rights reserved</p>
+</footer>
+
+</body>
+</html>
